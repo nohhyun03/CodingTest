@@ -2,12 +2,12 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] arr) {
-        Deque<Integer> stk = new ArrayDeque<>();
+        Stack<Integer> stk = new Stack<>();
         int i = 0;
         while (i < arr.length){
-            if (stk.isEmpty()) stk.addLast(arr[i++]);
-            else if (stk.peekLast() < arr[i]) stk.addLast(arr[i++]);
-            else stk.pollLast();
+            if (stk.isEmpty()) stk.push(arr[i++]);
+            else if (stk.peek() < arr[i]) stk.push(arr[i++]);
+            else stk.pop();
         }
         return stk.stream().mapToInt(Integer::intValue).toArray();
     }
