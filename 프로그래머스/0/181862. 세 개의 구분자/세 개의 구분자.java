@@ -2,7 +2,7 @@ import java.util.*;
 
 class Solution {
     public String[] solution(String myStr) {
-        String[] parts = String.join("c", String.join("b", myStr.split("a")).split("b")).split("c");
+        String[] parts = myStr.split("[abc]+");
         ArrayList<String> list = new ArrayList<>();
         for (String part : parts){
             if (!part.equals(""))
