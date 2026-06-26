@@ -1,0 +1,10 @@
+class Solution {
+    public int[][] solution(int n) {
+        int[][] answer = new int[n][];
+        for (int i = 0; i < n; i++){
+            answer[i] = new int[n];
+            answer[i][i] = 1;
+        }
+        return answer;
+    }
+}
